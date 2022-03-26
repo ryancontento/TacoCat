@@ -1,25 +1,30 @@
 :root {
-  --primary-color: #00a5ba;
-  --secondary-color: #b49714;
-  --dark-color: #140e16;
-  --light-color: #bbbcbe;
+  --primary-color: #e3a72f;
+  --secondary-color: #662d91;
+  --dark-color: #4e4e4e;
+  --light-color: #eee5cc;
 }
 
 body {
-  font-color: var(--dark-color);
+  color: var(--light-color);
+  background: var(--secondary-color) !important;
+  font-family: "Belleza", sans-serif !important;
 }
 
 nav {
-  background-color: var(--dark-color);
-  font-color: var(--light-color);
+  background-color: var(--light-color);
+  color: var(--light-color);
 }
 
-.nav-item {
-  font-color: var(--light-color);
+.navbar-brand {
+  color: var(--secondary-color) !important;
+}
+.nav-link {
+  color: var(--secondary-color) !important;
 }
 
 footer {
-  background-color: var(--dark-color);
+  background-color: var(--light-color);
   padding-right: 2rem;
 }
 
@@ -30,6 +35,19 @@ h4,
 h5,
 h6 {
   color: var(--primary-color);
+}
+
+.fa-ul {
+  color: var(--light-color) !important;
+}
+
+.btn,
+.btn-outline {
+  color: var(--light-color) !important;
+}
+
+p {
+  color: var(--light-color) !important;
 }
 
 main > .container {
@@ -44,7 +62,7 @@ main > .container {
 }
 
 footer .social > a {
-  color: var(--primary-color);
+  color: var(--secondary-color);
   opacity: 0.75;
 }
 
