@@ -11,15 +11,19 @@ body {
   font-family: "Belleza", sans-serif !important;
 }
 
-nav {
-  background-color: var(--light-color);
-  color: var(--light-color);
+.navbar {
+  background-color: var(--light-color) !important;
+  color: var(--light-color) !important;
 }
 
 .navbar-brand {
   color: var(--secondary-color) !important;
 }
 .nav-link {
+  color: var(--secondary-color) !important;
+}
+
+#navbarSupportedContent {
   color: var(--secondary-color) !important;
 }
 

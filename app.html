@@ -34,7 +34,7 @@
   <body class="d-flex flex-column h-100">
     <!-- Nav Section -->
 
-    <nav class="navbar navbar-expand-md navbar fixed-top">
+    <nav class="navbar navbar-expand-md navbar-light fixed-top">
       <div class="container-fluid">
         <a class="navbar-brand" href="#"
           ><img
@@ -71,7 +71,7 @@
               <a
                 class="nav-link"
                 target="_blank"
-                href="https://github.com/ryancontento"
+                href="https://github.com/ryancontento/TacoCat"
                 >GitHub Repo</a
               >
             </li>
@@ -91,8 +91,39 @@
     <!-- Main Section-->
 
     <main class="flex-shrink-0">
-        <div class="container"></div>
-    </main>
+      <div class="container mt-5">
+        <div class="row row-cols-1 row-cols-lg-2">
+          <div class="col px-3 py-3">
+            <h1 class="display-5 fw-bold lh-1 pb-3">TacoCat: A Coding Project</h1>
+            <h4 class="lead mb-2">
+              A JavaScript coding exercise using arrays.<br>
+              Goal: Write a program to determine if the word or phrase entered is a palindrome. 
+              A palindrome is a word or phrase that reads the same backward as forward. 
+            </h4>
+          </div>
+          <div class="col px-3 py-3">
+            <h5 border-1>Is it a palindrome?</h5>
+            <form class="gx-3 gy-2">
+              <div class="column">
+                <input id="userString" type="text" class="form-control" placeholder="Enter A String" aria-label="Enter A String" />
+              <div class="col-12 py-1">
+                <button type="button" id="btnSubmit" class="btn btn-danger">Test</button>
+              </div>
+              <div class="alert alert-danger mt-5 invisible fade show" id="alert" role="alert">
+                <h4 id="alertHeader" class="alert-heading">Well done!</h4>
+                <hr>
+                <h6 class="mb-0" id="msg">
+                  <!-- message here -->
+                </h6>
+              </div>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+  </main>
+
 
      <!-- Footer Section -->
      <footer class="footer mt-auto py-3 sticky-footer">
@@ -161,5 +192,8 @@
     crossorigin="anonymous"
   ></script>
   <script src="js/site.js"></script>
+  <script>
+    document.getElementById("btnSubmit").addEventListener("click", getValue);
+  </script>
   </body>
 </html>

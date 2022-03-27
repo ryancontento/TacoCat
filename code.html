@@ -35,7 +35,7 @@
   <body class="d-flex flex-column h-100">
     <!-- Nav Section -->
 
-    <nav class="navbar navbar-expand-md navbar fixed-top">
+    <nav class="navbar navbar-expand-md navbar-light fixed-top">
       <div class="container-fluid">
         <a class="navbar-brand" href="#"
           ><img
@@ -72,7 +72,7 @@
               <a
                 class="nav-link"
                 target="_blank"
-                href="https://github.com/ryancontento"
+                href="https://github.com/ryancontento/TacoCat"
                 >GitHub Repo</a
               >
             </li>
@@ -98,14 +98,67 @@
               <div class="col-lg-8">
                   <pre class="line-numbers">
                       <code class="language-javascript">
-                          console.log("hello");
+                        function getValue() {
+                          document.getElementById("alert").classList.add("invisible");
+                          let userString = document.getElementById("userString").value;
+                          let returnObj = checkForPalindrome(userString);
+                          displayString(returnObj);
+                        }
+                        
+                        function checkForPalindrome(userString) {
+                          userString = userString.toLowerCase();
+                          let regex = /[^a-z0-9]/gi;
+                          userString = userString.replace(regex, "");
+                        
+                          let revString = [];
+                          let returnObj = {};
+                        
+                          for (i = userString.length - 1; i >= 0; i--) {
+                            revString += userString[i];
+                          }
+                        
+                          if (revString == userString) {
+                            returnObj.msg = "Well done! You entered a palindrome.";
+                          } else {
+                            returnObj.msg = "Sorry, you did not enter a palindrome.";
+                          }
+                          returnObj.reversed = revString;
+                          return returnObj;
+                        }
+                        
+                        function displayString(returnObj) {
+                          document.getElementById("alertHeader").innerHTML = returnObj.msg;
+                          document.getElementById(
+                            "msg"
+                          ).innerHTML = `Your phrase reversed is ${returnObj.reversed} `;
+                          document.getElementById("alert").classList.remove("invisible");
+                        }
+                        
                       </code>
                   </pre>
               </div>
               <div class="col-lg-4">
-                  <p>hello</p>
-                  <h5>Place Holder Js</h5>
-                  <p>simple console log place holder.</p>
+                <p>The code is structured in three functions.</p>
+
+                <h5>Function one: getValue</h5>
+                <p>The main purpose of this function is to get the string that the user 
+                  enters. It then passes the data to the return object.</p>
+
+                <h5>Function two: checkForPalindrome</h5>
+                <p>
+                  This function will both reverse the string and check if it is a palindrome. 
+                  The ensure no false negatives, first the function converts the string to lowercase, then 
+                  using regex we parse the string to remove everything but the letters A-Z and digits 0-9. 
+                  Then the function loops through the string to reverse it, and uses an if else block to 
+                  check for the palindrome.
+                </p>
+
+                <h5>Function three: displayString</h5>
+                <p>This function works with the event listener (see script at bottom of app.html) 
+                  to post the results to the page. Because of the use of the returnObj, we can both 
+                return the reversed string, as well as informing the user if their string was infact a 
+              palindrome.</p>
+
               </div>
           </div>
       </div>
